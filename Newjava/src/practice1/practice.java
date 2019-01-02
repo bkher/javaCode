@@ -1,27 +1,35 @@
 package practice1;
 
+import java.util.HashMap;
+import java.util.Map.Entry;
+
 public class practice{
 	
 	public static void main(String[] args) {
 	
-		String str ="my name is bhagasinh";
-		int len = str.length();
-		
-		char ch[] = new char[str.length()]; 
-        for (int i = 0; i < len; i++) { 
-            ch[i] = str.charAt(i); 
-            int find = 0; 
-            for (int j = 0; j <= i; j++) { 
+		String str ="bhagat";
+//		int len = str.length();
+		HashMap<Character, Integer> charCountMap 
+        = new HashMap<Character, Integer>();
+		char ch[] = str.toCharArray();
+		for (char c : ch) { 
+            if (charCountMap.containsKey(c)) { 
   
-                // If any matches found 
-                if (str.charAt(i) == ch[j])  
-                    find++;                 
+                // If char is present in charCountMap, 
+                // incrementing it's count by 1 
+                charCountMap.put(c, charCountMap.get(c) + 1); 
             } 
-
-            if (find == 1)  
-                System.out.println("Number of Occurrence of " + 
-                 str.charAt(i) + " is:" + find);             
+            else { 
+  
+                // If char is not present in charCountMap, 
+                // putting this char to charCountMap with 1 as it's value 
+                charCountMap.put(c, 1); 
+            } 
+              
         } 
+		 for (Entry<Character, Integer> entry : charCountMap.entrySet()) { 
+	            System.out.println(entry.getKey() + " " + entry.getValue()); 
+	        } 
     } 
 		
 		

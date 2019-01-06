@@ -1,9 +1,15 @@
 package practice1;
 
-public class Matrix {
+public class Matrix{
+	
+	
+	private Matrix() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public static void main(String []args) {
 		
+	
 		
 	//	int c[][]= new int [3][2];
 		int b[][]= {{4,5,6,4},{4,5,6,3},{4,5,6,2},{4,5,6,5}};
@@ -26,3 +32,6 @@ public class Matrix {
 		
 	}
 }
+
+
+
